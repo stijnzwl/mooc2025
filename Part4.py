@@ -76,3 +76,30 @@ def spruce(n):
     
 spruce(3)
 spruce(7)
+
+
+def greatest_number(n, y, x): 
+    return max(n, y, x)
+        
+print(greatest_number(3, 4, 1)) # 4
+print(greatest_number(99, -4, 7)) # 99
+print(greatest_number(0, 0, 0)) # 0
+
+
+def same_chars(string, int1, int2):
+    if int1 < len(string) and int2 < len(string):
+        if string[int1] == string[int2]:
+            return True
+        else:
+            return False
+    else:
+        return False
+
+# same characters m and m
+print(same_chars("programmer", 6, 7)) # True
+
+# different characters p and r
+print(same_chars("programmer", 0, 4)) # False
+
+# the second index is not within the string
+print(same_chars("programmer", 0, 12)) # False
