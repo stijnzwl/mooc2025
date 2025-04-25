@@ -66,11 +66,13 @@ shape(2, "o", 4, "+")
 shape(3, ".", 0, ",")
 
 
-def spruce(integer):
+def spruce(n):
     print('a spruce!')
-    string = ''
-
+    for i in range(1, n + 1):
+        spaces = (n - i) * " "
+        stars = ((i * 2) - 1) * "*"
+        print(spaces + stars)
+    print((n - 1) * " " + "*")
     
-    
-        
 spruce(3)
+spruce(7)
