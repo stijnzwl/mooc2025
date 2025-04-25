@@ -96,7 +96,6 @@ def distinct_numbers(int_lst):
     new_list = []
     for i in int_lst:
         if i not in new_list:
-            print("hi")
             new_list.append(i)
         else:
             continue
@@ -126,3 +125,49 @@ my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
 result = length_of_longest(my_list)
 print(result)
 
+
+def shortest(my_list):
+    word = ''
+    
+    for i in my_list:
+        if word == '':
+            word = i
+        elif len(i) < len(word):
+            word = i
+        else:
+            continue
+    return word
+
+my_list = ["first", "second", "fourth", "eleventh"]
+
+result = shortest(my_list)
+print(result)
+
+my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
+
+result = shortest(my_list)
+print(result)
+
+
+def all_the_longest(new_list):
+    longest_word = ''
+    lst = []
+    for i in new_list:
+        if len(i) > len(longest_word):
+            longest_word = i
+            
+    for i in new_list:
+        if len(i) == len(longest_word):
+            lst.append(i)
+            
+    return lst
+
+my_list = ["first", "second", "fourth", "eleventh"]
+
+result = all_the_longest(my_list)
+print(result) # ['eleventh']
+
+my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
+
+result = all_the_longest(my_list)
+print(result) # ['dorothy', 'richard']
