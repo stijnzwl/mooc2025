@@ -103,3 +103,23 @@ print(same_chars("programmer", 0, 4)) # False
 
 # the second index is not within the string
 print(same_chars("programmer", 0, 12)) # False
+
+
+def first_word(string):
+    lst = string.split()
+    return lst[0]
+
+def second_word(string):
+    lst = string.split()
+    return lst[1]
+
+def last_word(string):
+    lst = string.split()
+    return lst[-1]
+
+sentence = "it was a dark and stormy python"
+print(first_word(sentence)) # it
+print(second_word(sentence)) # was
+print(last_word(sentence)) # python
+
+
