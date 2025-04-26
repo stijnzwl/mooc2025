@@ -78,3 +78,31 @@ print("Copy:")
 print_sudoku(grid_copy)
 
 
+def play_turn(game_board: list, x: int, y: int, piece: str):
+    if 0 <= x < len(game_board) and 0 <= y < len(game_board[0]):
+        if game_board[y][x] == '':
+            game_board[y][x] = piece
+            return True
+    return False
+
+game_board = [["", "", ""], ["", "", ""], ["", "", ""]]
+print(play_turn(game_board, 2, 0, "X"))
+print(game_board)
+
+
+def transpose(matrix: list):
+    new_matrix = []
+    for row in matrix:
+        new_matrix.append(row[:])
+    for i in range(len(matrix)):
+        for n in range(len(matrix)):
+            matrix[i][n] = new_matrix[n][i]
+
+
+matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+print(matrix)
+transpose(matrix)
+print(matrix)
+
+
+    
