@@ -112,29 +112,15 @@
 # summary(students)
 
 
-alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-layers = 2
+CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-count = 0
-# for i in range(1, layers + 1):
-#     for n in range(1, i*2-1):
-        
+layers = int(input("Layers: "))
 
-
-for i in range(layers*2-1):
-    print(alphabet[i] * (layers*2-1))
-
-    # print(alphabet[i] * (i*2-1))
-
-
-# layers 3
-# 5
-# 1 3 1
-# 1 1 1 1 1
-# 1 3 1
-# 5
-
-
-
-# letter amount = i
-# size square = (i * 2) - 1
+rows = []
+for index_1 in range(layers):
+    for index_2, string in enumerate(rows):
+        rows[index_2] = CHARACTERS[index_1] + string + CHARACTERS[index_1]
+    rows.append((2 * index_1 + 1) * CHARACTERS[index_1])
+    if index_1:
+        rows.insert(0, (2 * index_1 + 1) * CHARACTERS[index_1])
+print("\n".join(rows))
